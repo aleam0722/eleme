@@ -7,7 +7,7 @@
 ########################### us_order ################################
 hdfs dfs -rmr /user/root/us_order
 sqoop import \
---connect jdbc:mysql://192.168.49.101:3306/szbap_ods \
+--connect jdbc:mysql://192.168.88.112:3306/szbap_ods \
 --username root \
 --password 123456 \
 --table us_order \
@@ -27,7 +27,7 @@ select *, date(order_date) dt
 ############################## bbp_ods.ods_order_item(*) ####################################
 hdfs dfs -rmr /user/root/order_item
 sqoop import \
---connect jdbc:mysql://192.168.49.101:3306/szbap_ods \
+--connect jdbc:mysql://192.168.88.112:3306/szbap_ods \
 --username root \
 --password 123456 \
 --table order_item \
@@ -47,7 +47,7 @@ select *, date(update_time) as dt
 
 ########################## szbbp_ods_.ods_order_delivery(*) ###########################
 hdfs dfs -rmr /user/root/order_delivery
-sqoop import --connect jdbc:mysql://192.168.49.101:3306/szbap_ods \
+sqoop import --connect jdbc:mysql://192.168.88.112:3306/szbap_ods \
 --username root \
 --password 123456 \
 --table order_delivery \
@@ -67,7 +67,7 @@ select *, date(update_time) as dt
 
 ############################## szbbp_ods_.ods_biz_trade(*) ####################################
 hdfs dfs -rmr /user/root/ods_biz_trade
-sqoop import --connect jdbc:mysql://192.168.49.101:3306/szbap_ods \
+sqoop import --connect jdbc:mysql://192.168.88.112:3306/szbap_ods \
 --username root \
 --password 123456 \
 --table biz_trade \
@@ -87,7 +87,7 @@ select *, date(trade_time) as dt
 
 ############################## szbbp_ods_.ods_cart(*) ####################################
 hdfs dfs -rmr /user/root/cart
-sqoop import --connect jdbc:mysql://192.168.49.101:3306/szbap_ods \
+sqoop import --connect jdbc:mysql://192.168.88.112:3306/szbap_ods \
 --username root \
 --password 123456 \
 --table cart \
